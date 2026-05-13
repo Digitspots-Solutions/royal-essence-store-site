@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Royal Essence Store - Where Style Meets Creativity</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300&family=Work+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-primary: #0d0d0d;
+            --color-accent: #c58790;
+            --color-bg: #FFFBFB;
+            --color-text: #0A0A0A;
+            --color-surface: #f1e9ea;
+            --color-secondary-accent: #818181;
+            --font-display: 'Fraunces', serif;
+            --font-body: 'Work Sans', sans-serif;
+            --border-radius: 0px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--color-text);
+            background-color: var(--color-bg);
+            line-height: 1.6;
+            background-image: 
+                repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.02) 2px, rgba(0,0,0,0.02) 4px);
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(24px);
+            }
+            to {
+                opacity: 1;
+                transform: none;
+            }
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 251, 251, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem 5%;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(13, 13, 13, 0.1);
+            animation: fadeUp 0.6s ease forwards;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: var(--color-primary);
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--color-text);
+            font-weight: 400;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links a:hover {
+            color: var(--color-accent);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+            z-index: 1001;
+        }
+
+        .mobile-menu-btn span {
+            width: 25px;
+            height: 2px;
+            background: var(--color-text);
+            transition: all 0.3s ease;
+            transform-origin: center;
+        }
+
+        .mobile-menu-btn.active span:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+        }
+
+        .mobile-menu-btn.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-btn.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
+
+        .mobile-menu {
+            position: fixed;
+            top: 70px;
+            right: -100%;
+            width: 300px;
+            height: calc(100vh - 70px);
+            background: var(--color-bg);
+            box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+            transition: right 0.3s ease;
+            z-index: 999;
+            padding: 2rem;
+        }
+
+        .mobile-menu.active {
+            right: 0;
+        }
+
+        .mobile-menu ul {
+            list-style: none;
+        }
+
+        .mobile-menu ul li {
+            margin-bottom: 1.5rem;
+        }
+
+        .mobile-menu ul a {
+            text-decoration: none;
+            color: var(--color-text);
+            font-size: 1.1rem;
+            font-weight: 400;
+            transition: color 0.3s ease;
+            display: block;
+            padding: 0.5rem 0;
+            letter-spacing: 0.5px;
+        }
+
+        .mobile-menu ul a:hover {
+            color: var(--color-accent);
+        }
+
+        #hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            animation: fadeUp 0.6s ease forwards;
+            animation-delay: 0.1s;
+        }
+
+        .hero-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.55);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 80px 5%;
+            color: #ffffff;
+        }
+
+        .hero-content h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            font-weight: 300;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            letter-spacing: 2px;
+        }
+
+        .hero-content .tagline {
+            font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+            font-weight: 300;
+            margin-bottom: 2rem;
+            letter-spacing: 1px;
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            max-width: 650px;
+            margin-bottom: 2.5rem;
+            font-weight: 300;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 3rem;
+            background: var(--color-accent);
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: 2px solid var(--color-accent);
+            letter-spacing: 1px;
+        }
+
+        .cta-button:hover {
+            background: transparent;
+            color: #ffffff;
+            border-color: #ffffff;
+        }
+
+        section {
+            padding: 80px 5%;
+            animation: fadeUp 0.6s ease forwards;
+        }
+
+        #about {
+            animation-delay: 0.2s;
+        }
+
+        #services {
+            animation-delay: 0.3s;
+        }
+
+        #testimonials {
+            animation-delay: 0.4s;
+        }
+
+        #contact {
+            animation-delay: 0.5s;
+        }
+
+        .section-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            font-weight: 300;
+            margin-bottom: 3rem;
+            color: var(--color-primary);
+            letter-spacing: 2px;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-image {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+        }
+
+        .about-text p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--color-surface);
+            padding: 2.5rem 2rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--color-accent);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-bottom: 1rem;
+            color: var(--color-primary);
+            letter-spacing: 1px;
+        }
+
+        .service-card p {
+            font-size: 1rem;
+            line-height: 1.7;
+            font-weight: 300;
+            color: var(--color-text);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: var(--color-surface);
+            padding: 2rem;
+            border-left: 3px solid var(--color-accent);
+            position: relative;
+        }
+
+        .testimonial-card p {
+            font-size: 1rem;
+            line-height: 1.7;
+            font-style: italic;
+            margin-bottom: 1rem;
+            font-weight: 300;
+        }
+
+        .testimonial-author {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--color-secondary-accent);
+            font-style: normal;
+        }
+
+        .contact-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact-content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin: 3rem 0;
+            text-align: left;
+        }
+
+        .contact-item {
+            font-size: 1.05rem;
+        }
+
+        .contact-item strong {
+            font-weight: 500;
+            color: var(--color-primary);
+        }
+
+        .contact-item a {
+            color: var(--color-accent);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item a:hover {
+            color: var(--color-primary);
+        }
+
+        .whatsapp-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: #25D366;
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+            margin-top: 2rem;
+            transition: all 0.3s ease;
+            letter-spacing: 0.5px;
+        }
+
+        .whatsapp-button:hover {
+            background: #20bd5a;
+            transform: translateY(-2px);
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            color: #ffffff;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            z-index: 999;
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+        }
+
+        footer {
+            background: var(--color-primary);
+            color: #ffffff;
+            text-align: center;
+            padding: 2rem 5%;
+            font-size: 0.95rem;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: flex;
+            }
+
+            section {
+                padding: 48px 5%;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .about-image {
+                height: 350px;
+            }
+
+            .services-grid,
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-content {
+                padding: 48px 5%;
+            }
+
+            .whatsapp-float {
+                bottom: 20px;
+                right: 20px;
+                width: 50px;
+                height: 50px;
+                font-size: 24px;
+            }
+        }
+
+        @media (min-width: 769px) and (max-width: 1024px) {
+            section {
+                padding: 64px 5%;
+            }
+
+            .services-grid,
+            .testimonials-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="#hero" class="logo">ROYAL ESSENCE</a>
+            <ul class="nav-links">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="mobile-menu">
+        <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+
+    <section id="hero">
+        <img src="https://images.pexels.com/photos/32290497/pexels-photo-32290497.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Royal Essence Store" class="hero-image">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Royal Essence Store</h1>
+            <p class="tagline">Where Style Meets Creativity</p>
+            <p>Discover exquisite fashion pieces and bespoke creative designs that celebrate your unique essence. From trending styles to custom creations, we bring your fashion vision to life. Located in Ibadan, serving fashion-forward Nigerians.</p>
+            <a href="#contact" class="cta-button">GET IN TOUCH</a>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="section-container">
+            <h2 class="section-title">About Us</h2>
+            <div class="about-content">
+                <img src="https://images.pexels.com/photos/9849315/pexels-photo-9849315.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Royal Essence Store Team" class="about-image">
+                <div class="about-text">
+                    <p>Royal Essence Store is Ibadan's premier destination for fashion and creative design excellence. We specialize in curating stunning ready-to-wear collections and delivering bespoke creative design services that capture your individual style. Our passion is helping you express your royal essence through fashion that makes a statement.</p>
+                    <p>Whether you're looking for the latest trends, traditional attire with a modern twist, or custom designs for special occasions, our dedicated team brings years of expertise in fashion styling and creative design. We understand the Nigerian fashion landscape and blend international trends with local flair to create pieces that resonate with your lifestyle.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services">
+        <div class="section-container">
+            <h2 class="section-title">Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Ready-to-Wear Collections</h3>
+                    <p>Carefully curated selection of trending fashion pieces, from casual wear to statement outfits. Updated regularly with the latest styles for men, women, and children.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Custom Design & Tailoring</h3>
+                    <p>Bespoke fashion creations tailored to your exact specifications. Perfect for weddings, parties, corporate events, and special occasions. We bring your vision to life.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Fashion Styling</h3>
+                    <p>Professional styling consultations to help you discover your signature look. Personal shopping assistance and wardrobe planning services available.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Creative Design Services</h3>
+                    <p>Beyond fashion, we offer creative design solutions including graphic design for fashion brands, event styling, and visual merchandising.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Fabric Sourcing</h3>
+                    <p>Access to premium Nigerian and international fabrics. We help you select the perfect materials for your custom pieces.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Alterations & Repairs</h3>
+                    <p>Expert alteration services to ensure the perfect fit for all your garments.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials">
+        <div class="section-container">
+            <h2 class="section-title">What Our Clients Say</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p>"Royal Essence Store made my wedding outfit dreams come true! The attention to detail and creative design was exceptional. I received so many compliments. Thank you!"</p>
+                    <div class="testimonial-author">— Funmilayo A., Ibadan</div>
+                </div>
+                <div class="testimonial-card">
+                    <p>"I've been shopping at Royal Essence for over a year now. Their collection is always fresh and their custom pieces are outstanding. The team truly understands fashion."</p>
+                    <div class="testimonial-author">— Chukwudi M., Akinyele</div>
+                </div>
+                <div class="testimonial-card">
+                    <p>"Professional, creative, and reliable. They designed my entire wardrobe for my business launch and I couldn't be happier. Highly recommended!"</p>
+                    <div class="testimonial-author">— Blessing O., Ibadan</div>
+                </div>
+                <div class="testimonial-card">
+                    <p>"The quality of fabrics and craftsmanship is top-notch. Royal Essence Store is my go-to for all special occasions. They never disappoint."</p>
+                    <div class="testimonial-author">— Adewale K., Oyo State</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="section-container">
+            <h2 class="section-title">Visit Us</h2>
+            <div class="contact-content">
+                <p>Ready to discover your royal essence? Visit our store or reach out to discuss your fashion needs. We're conveniently located in Moniya, Ibadan, and we're here to serve you.</p>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <strong>Royal Essence Store</strong><br>
+                        21, Abiola Area, Abanise Street, Moniya<br>
+                        Akinyele, Ibadan, Nigeria
+                    </div>
+                    <div class="contact-item">
+                        <strong>Phone:</strong> <a href="tel:+2348100833858">08100833858</a>
+                    </div>
+                    <div class="contact-item">
+                        <strong>Store Hours:</strong><br>
+                        Monday - Saturday: 9:00 AM - 7:00 PM<br>
+                        Sunday: 12:00 PM - 5:00 PM
+                    </div>
+                </div>
+                <p>We look forward to helping you express your unique style. Walk-ins welcome, appointments recommended for custom design consultations.</p>
+                <a href="https://wa.me/2348100833858" class="whatsapp-button" target="_blank">Chat with us on WhatsApp</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Royal Essence Store. All rights reserved.</p>
+    </footer>
+
+    <a href="https://wa.me/2348100833858" class="whatsapp-float" target="_blank" aria-label="WhatsApp">💬</a>
+
+    <script>
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const mobileMenu = document.querySelector('.mobile-menu');
+
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenuBtn.classList.toggle('active');
+                mobileMenu.classList.toggle('active');
+            });
+
+            const mobileLinks = mobileMenu.querySelectorAll('a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenuBtn.classList.remove('active');
+                    mobileMenu.classList.remove('active');
+                });
+            });
+        }
+    </script>
+</body>
+</html>
