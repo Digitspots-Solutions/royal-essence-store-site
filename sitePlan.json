@@ -1,0 +1,49 @@
+{
+  "businessName": "Royal Essence Store",
+  "industry": "Fashion and Creative Design",
+  "tone": "elegant and contemporary",
+  "tagline": "Where Style Meets Creativity",
+  "sections": [
+    {
+      "id": "hero",
+      "name": "Hero",
+      "copy": "Royal Essence Store - Where Style Meets Creativity. Discover exquisite fashion pieces and bespoke creative designs that celebrate your unique essence. From trending styles to custom creations, we bring your fashion vision to life. Located in Ibadan, serving fashion-forward Nigerians.",
+      "imagePrompt": "Luxurious fashion boutique interior with elegant Nigerian fabrics, modern clothing displays featuring vibrant African prints and contemporary Western styles, warm ambient lighting, polished wooden floors, gold accents, sophisticated retail space in Ibadan, photorealistic, high-end fashion atmosphere",
+      "layout": "centered"
+    },
+    {
+      "id": "about",
+      "name": "About Us",
+      "copy": "Royal Essence Store is Ibadan's premier destination for fashion and creative design excellence. We specialize in curating stunning ready-to-wear collections and delivering bespoke creative design services that capture your individual style. Our passion is helping you express your royal essence through fashion that makes a statement. Whether you're looking for the latest trends, traditional attire with a modern twist, or custom designs for special occasions, our dedicated team brings years of expertise in fashion styling and creative design. We understand the Nigerian fashion landscape and blend international trends with local flair to create pieces that resonate with your lifestyle.",
+      "imagePrompt": "Professional Nigerian fashion designer working with colorful fabrics in a bright, modern studio, measuring tape around neck, sketches and fabric swatches on workspace, African prints and contemporary materials, creative atmosphere, natural lighting from large windows, Ibadan fashion scene",
+      "layout": "split"
+    },
+    {
+      "id": "services",
+      "name": "Our Services",
+      "copy": "Ready-to-Wear Collections - Carefully curated selection of trending fashion pieces, from casual wear to statement outfits. Updated regularly with the latest styles for men, women, and children.\n\nCustom Design & Tailoring - Bespoke fashion creations tailored to your exact specifications. Perfect for weddings, parties, corporate events, and special occasions. We bring your vision to life.\n\nFashion Styling - Professional styling consultations to help you discover your signature look. Personal shopping assistance and wardrobe planning services available.\n\nCreative Design Services - Beyond fashion, we offer creative design solutions including graphic design for fashion brands, event styling, and visual merchandising.\n\nFabric Sourcing - Access to premium Nigerian and international fabrics. We help you select the perfect materials for your custom pieces.\n\nAlterations & Repairs - Expert alteration services to ensure the perfect fit for all your garments.",
+      "imagePrompt": "Elegant fashion service showcase with multiple panels showing: colorful ready-to-wear clothing on modern racks, tailor taking measurements, fashion consultation in progress, premium fabrics displayed, all in upscale Nigerian boutique setting with natural light, professional and inviting",
+      "layout": "grid"
+    },
+    {
+      "id": "testimonials",
+      "name": "What Our Clients Say",
+      "copy": "\"Royal Essence Store made my wedding outfit dreams come true! The attention to detail and creative design was exceptional. I received so many compliments. Thank you!\" - Funmilayo A., Ibadan\n\n\"I've been shopping at Royal Essence for over a year now. Their collection is always fresh and their custom pieces are outstanding. The team truly understands fashion.\" - Chukwudi M., Akinyele\n\n\"Professional, creative, and reliable. They designed my entire wardrobe for my business launch and I couldn't be happier. Highly recommended!\" - Blessing O., Ibadan\n\n\"The quality of fabrics and craftsmanship is top-notch. Royal Essence Store is my go-to for all special occasions. They never disappoint.\" - Adewale K., Oyo State",
+      "imagePrompt": "Collage of happy, well-dressed Nigerian clients in various elegant outfits at different occasions - traditional wedding attire, contemporary business wear, party outfits, all showing confidence and style, bright backgrounds, diverse ages, authentic Nigerian fashion moments, professional photography",
+      "layout": "cards"
+    },
+    {
+      "id": "contact",
+      "name": "Visit Us",
+      "copy": "Ready to discover your royal essence? Visit our store or reach out to discuss your fashion needs. We're conveniently located in Moniya, Ibadan, and we're here to serve you.\n\nRoyal Essence Store\n21, Abiola Area, Abanise Street, Moniya\nAkinyele, Ibadan, Nigeria\n\nPhone: 08100833858\nWhatsApp: Chat with us instantly for quick inquiries and appointments\n\nStore Hours:\nMonday - Saturday: 9:00 AM - 7:00 PM\nSunday: 12:00 PM - 5:00 PM\n\nWe look forward to helping you express your unique style. Walk-ins welcome, appointments recommended for custom design consultations.",
+      "imagePrompt": "Welcoming storefront of Royal Essence Store, modern boutique exterior in Ibadan neighborhood, clear signage, inviting entrance with fashion displays visible through windows, Nigerian street scene, daytime, professional retail photography, accessible and friendly atmosphere",
+      "layout": "centered"
+    }
+  ],
+  "contact": {
+    "phone": "08100833858",
+    "email": "",
+    "address": "21, Abiola Area, Abanise Street, Moniya, Akinyele, Ibadan, Nigeria",
+    "whatsapp": "https://wa.me/2348100833858"
+  }
+}
